@@ -1,6 +1,8 @@
+//reddsaut
 #include <stdio.h>        // printf
 #include <assert.h>       // assert
 #include <limits.h>       // named constants for min, max of C integer data types
+#include <math.h>
 
 
 float sales_example(float item_cost, unsigned short num_items, float tax);
@@ -19,6 +21,7 @@ int main() {
     total1 = sales_example(3.94, 4, 0.06);
     printf("Total1 = $%.2f\n", total1);
     // TODO: Test on multiple calls, then add assert statements here
+    assert(abs(total1 - 16.71) < 0.01);
 
     // TASK 2: loop experiment
     // TODO: place function call here
@@ -38,7 +41,12 @@ int main() {
     */
 float sales_example(float item_cost, unsigned short num_items, float tax) {
     // TODO: Complete this definition (removing the default return)
-    return 0.0;
+    float cost_before_tax = item_cost * num_items;
+
+    if(tax == 0.0) {
+        printf("No sales tax on this item");
+    }
+    return cost_before_tax * (1 + tax);
 }
 
 /** TODO TASK 2:
