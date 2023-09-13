@@ -7,6 +7,8 @@
 
 float sales_example(float item_cost, unsigned short num_items, float tax);
 
+void loop_example();
+
 // TODO: (Task 2) Put declaration of loop_example here
 
 void utype_sizes();
@@ -17,14 +19,14 @@ void utype_sizes();
 
 int main() {
     // TASK 1: sales example
-    float total1;
+    /*float total1;
     total1 = sales_example(3.94, 4, 0.06);
     printf("Total1 = $%.2f\n", total1);
     // TODO: Test on multiple calls, then add assert statements here
-    assert(abs(total1 - 16.71) < 0.01);
+    assert(fabs(total1 - 16.71) < 0.01);  */
 
     // TASK 2: loop experiment
-    // TODO: place function call here
+    loop_example();
 
     // TASK 3: unsigned integer types, sizes, and maximums
     utype_sizes();
@@ -52,6 +54,27 @@ float sales_example(float item_cost, unsigned short num_items, float tax) {
 /** TODO TASK 2:
     * Create your loop_example function here
     */
+
+void loop_example() {
+    printf("for loop\n");
+    for(int i=10; i<=25; i+=5) {
+        printf(i + " " + i*i);
+    }
+    printf("\n");
+    int x = 10;
+    printf("while loop\n");
+    while(x<=25) {
+        x+=5;
+        printf(x + " " + x*x);
+    }
+    printf("\n");
+    x=10;
+    printf("do loop\n");
+    do {
+        x+=5;
+        printf(x + " " + x*x);
+    } while(x<25);
+}
 
 /** TODO TASK 3:
     * Add print statements to print the max values and sizes of each unsigned
